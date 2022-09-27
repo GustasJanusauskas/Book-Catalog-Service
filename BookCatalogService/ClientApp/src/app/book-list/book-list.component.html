@@ -1,0 +1,14 @@
+<div class="BookList">
+    <mat-paginator [length]="paginatorLength" [pageSizeOptions]="[15]" (page)="pageChange($event)" aria-label="Select page">
+    </mat-paginator>
+    <mat-grid-list cols="3" rowHeight="1:1.6">
+        <a *ngFor="let listing of bookList" [href]="'/view?id=' + listing.id">
+            <mat-grid-tile class="BookTile" *ngIf="listing.book" [style]="'background: ' + listing.colour">
+                <mat-grid-tile-header>{{listing.book.title}}</mat-grid-tile-header>
+                <img class="BookCover" [src]="listing.book.imagePath || 'assets/defaultCover.png'" />
+                <mat-grid-tile-footer>by {{listing.book.author}}</mat-grid-tile-footer>
+            </mat-grid-tile>
+        </a>
+    </mat-grid-list>
+    <br><br>
+</div>

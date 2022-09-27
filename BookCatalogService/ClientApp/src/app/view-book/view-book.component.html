@@ -1,0 +1,19 @@
+<div class="BookDetails" *ngIf="listing.book">
+    <h1>{{listing.book.title}}</h1>
+    <img class="BookCover" [src]="listing.book.imagePath || 'assets/defaultCover.png'" [style]="'background: ' + listing.colour"/>
+    <p>
+        {{listing.book.genre}}<br>
+        Written by {{listing.book.author}}<br>
+    </p>
+    <div class="SmallPrint">
+        Published {{listing.book.dateOfPublishing}} by {{listing.book.publisher}}<br>
+        {{listing.book.isbn}}
+    </div>
+    <br>
+    {{session == '' ? 'Please log in to borrow or reserve book.' : ''}}
+    <div *ngIf="disableBorrow">
+        <button mat-stroked-button [disabled]="disableReserve && listing.reserved_by != this.userID" [color]="listing.reserved_by == this.userID ? 'warn' : 'accent'" *ngIf="session != ''" (click)="reserveBook(listing.reserved_by != this.userID)">{{listing.reserved_by == this.userID ? 'Cancel reservation' : 'Reserve book'}}</button>
+        <br><br>
+    </div>
+    <button mat-stroked-button [disabled]="disableBorrow" color="primary" *ngIf="session != ''" (click)="borrowBook()">Borrow book</button>
+</div>

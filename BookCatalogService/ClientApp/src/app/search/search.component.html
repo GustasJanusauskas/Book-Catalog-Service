@@ -1,0 +1,69 @@
+<div id="SearchPage">
+    <h1>Search Book Catalogue</h1>
+    <br>
+    <div id="SearchParameters">
+        <div id="SearchTop">
+            <mat-form-field class="SearchTitle" hintLabel="Max 512 characters" appearance="fill">
+                <mat-label>Enter book title.</mat-label>
+                <input matInput maxlength="512" type="text" placeholder="Search here." autocomplete="off" [(ngModel)]="searchParams.searchTitle">
+                <mat-hint align="end">{{searchParams.searchTitle?.length || 0}}/512</mat-hint>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button color="primary" id="SearchButton" (click)="search()"><mat-icon>search</mat-icon>&ThickSpace; Search</button>
+        </div>
+        <br><br>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Extra search parameters
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <mat-checkbox [(ngModel)]="searchParams.canBorrow">Book is available to borrow</mat-checkbox>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-checkbox [(ngModel)]="searchParams.canReserve">Book is available to reserve</mat-checkbox>
+            <br><br>
+
+            <mat-form-field class="SearchForm" hintLabel="Max 512 characters" appearance="fill">
+                <mat-label>Enter book author.</mat-label>
+                <input matInput maxlength="512" type="text" placeholder="Search here." autocomplete="off" [(ngModel)]="searchParams.searchAuthor">
+                <mat-hint align="end">{{searchParams.searchAuthor?.length || 0}}/512</mat-hint>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field class="SearchForm" hintLabel="Max 512 characters" appearance="fill">
+                <mat-label>Enter book publisher.</mat-label>
+                <input matInput maxlength="512" type="text" placeholder="Search here." autocomplete="off" [(ngModel)]="searchParams.searchPublisher">
+                <mat-hint align="end">{{searchParams.searchPublisher?.length || 0}}/512</mat-hint>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="SearchForm" hintLabel="Max 128 characters" appearance="fill">
+                <mat-label>Enter book genre.</mat-label>
+                <input matInput maxlength="128" type="text" placeholder="Search here." autocomplete="off" [(ngModel)]="searchParams.searchGenre">
+                <mat-hint align="end">{{searchParams.searchGenre?.length || 0}}/128</mat-hint>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field class="SearchForm" hintLabel="Max 20 characters" appearance="fill">
+                <mat-label>Enter book ISBN Code.</mat-label>
+                <input matInput maxlength="20" type="text" placeholder="Search here." autocomplete="off" [(ngModel)]="searchParams.searchISBN">
+                <mat-hint align="end">{{searchParams.searchISBN?.length || 0}}/20</mat-hint>
+            </mat-form-field>
+            <br><br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Choose publishing date range.</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate placeholder="Start date" [(ngModel)]="searchDateStart">
+                    <input matEndDate placeholder="End date" [(ngModel)]="searchDateEnd">
+                </mat-date-range-input>
+                <mat-hint>YYYY-MM-DD - YYYY-MM-DD</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+
+        </mat-expansion-panel>
+        <app-book-list></app-book-list>
+    </div>
+</div>

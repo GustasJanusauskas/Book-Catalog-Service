@@ -1,0 +1,18 @@
+<div id="Login">
+    <h2>Log in</h2>
+    <mat-form-field class="LoginForm" hintLabel="Max 256 characters" appearance="fill">
+        <mat-label>Enter your username or email.</mat-label>
+        <input matInput maxlength="256" type="text" placeholder="Enter your username or email" id="UserInput" [formControl]="username" autocomplete="off">
+        <mat-hint align="end">{{username.value!.length || 0}}/256</mat-hint>
+        <mat-error *ngIf="username.invalid">{{getErrorMsg(username)}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="LoginForm" hintLabel="Max 256 characters" appearance="fill">
+        <mat-label>Enter your password.</mat-label>
+        <input matInput maxlength="256" type="password" placeholder="Enter your password" id="PassInput" [formControl]="password" autocomplete="off">
+        <mat-hint align="end">{{password.value!.length || 0}}/256</mat-hint>
+        <mat-error *ngIf="password.invalid">{{getErrorMsg(password)}}</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" id="LoginMainButton" (click)="login()"><mat-icon>login</mat-icon>&ThickSpace; Login</button>
+</div>

@@ -1,0 +1,21 @@
+#Login,#LoginMainButton {
+    text-align: center;
+}
+
+#LoginMainButton, .mat-form-field {
+    margin-top: 1em;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.mat-form-field, .mat-raised-button {
+    width: 75%;
+}
+
+@media screen and (min-width: 800px) {
+    .mat-form-field, .mat-raised-button {
+        width: 50%;
+    }
+}

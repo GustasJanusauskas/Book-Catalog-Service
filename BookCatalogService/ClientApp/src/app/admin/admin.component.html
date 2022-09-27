@@ -1,0 +1,21 @@
+<h1>Administration Panel</h1>
+
+<button mat-raised-button color="primary" (click)="changeListingStatus('borrowed_by')"><mat-icon>library_books</mat-icon>&ThickSpace; Mark selection as returned</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button mat-raised-button color="accent" (click)="changeListingStatus('reserved_by')"><mat-icon>star</mat-icon>&ThickSpace; Mark selection as not reserved</button>
+
+<br><br>
+
+<mat-paginator [length]="paginatorLength" [pageSizeOptions]="[15]" (page)="pageChange($event)" aria-label="Select page">
+</mat-paginator>
+
+<mat-selection-list dense #listings>
+    <div mat-subheader>Listings selected: {{listings.selectedOptions.selected.length}}</div>
+    <div mat-subheader>Borrowed/Reserved Books</div>
+    <mat-list-option *ngFor="let listing of borrowedList" [value]="listing.id">
+        <mat-icon mat-list-icon>book</mat-icon>
+        <div mat-line *ngIf="listing.book">{{listing.book.title}} by {{listing.book.author}} ({{listing.book.isbn}})</div>
+        <div mat-line> Borrowed by (ID): {{listing.borrowed_by == -1 ? '-' : listing.borrowed_by}}/Reserved by (ID): {{listing.reserved_by == -1 ? '-' : listing.reserved_by}}</div>
+        <div mat-line> ID: {{listing.id}}</div>
+    </mat-list-option>
+</mat-selection-list>

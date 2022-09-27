@@ -1,0 +1,12 @@
+.BookDetails {
+    text-align: center;
+}
+
+.BookCover {
+    width: 16em;
+    background-color: #3f51b5;
+}
+
+.SmallPrint{ 
+    color: dimgray;
+}

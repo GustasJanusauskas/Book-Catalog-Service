@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+
+#SearchParameters {
+    
+}
+
+#SearchTop {
+    display: flex;
+    align-items: flex-start;
+}
+
+#SearchButton {
+    font-size: medium;
+}
+
+#SearchButton, .SearchTitle {
+    height: 3.7em;
+}
+
+.SearchTitle {
+    width: 50%;
+}

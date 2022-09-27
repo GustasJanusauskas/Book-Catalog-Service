@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-ocean: (
+    900: #006064,
+    800: #00838f,
+    700: #0098a7,
+    600: #00adc1,
+    500: #00bdd4,
+    400: #26c7da,
+    300: #4dd1e1,
+    200: #80dfea,
+    100: #b2ebf2,
+    contrast: (
+        100: rgba(black,0.87)
+    )
+);
+
+$mat-customIndigo: (
+    900: #1a237e,
+    800: #283593,
+    700: #303f9f,
+    600: #3949ab,
+    500: #3f51b5,
+    400: #5c6bc0, 
+    300: #7986cb,
+    200: #9fa8da,
+    100: #c5cae9,
+    contrast: ( 
+        100: rgba(black,0.87) 
+    )
+);
+
+$Bookcatalogservice-primary: mat-palette($mat-ocean);
+$Bookcatalogservice-accent: mat-palette($mat-customIndigo);
+$Bookcatalogservice-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Bookcatalogservice-theme: mat-light-theme($Bookcatalogservice-primary, $Bookcatalogservice-accent, $Bookcatalogservice-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+
+@include angular-material-theme($Bookcatalogservice-theme);

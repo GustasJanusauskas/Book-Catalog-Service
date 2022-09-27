@@ -1,0 +1,15 @@
+mat-grid-tile {
+  background-color: #3f51b5;
+}
+
+.BookCover {
+  width: 100%;
+}
+
+.BookTile {
+  transition: box-shadow .3s;
+}
+
+.BookTile:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,1); 
+}
