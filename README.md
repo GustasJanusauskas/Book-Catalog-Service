@@ -40,7 +40,7 @@ npm i
 ```
 3. To setup the database, run the commands included in 'DB Setup.sql' via postgreSQL.
 4. To add the sample data, run the commands included in 'DB Sample Data.sql' via postgreSQL.
-5. Enter PostgreSQL credentials in BookCatalogService\Controllers\APIController.cs
+5. Enter PostgreSQL credentials in the constructor of BookCatalogService\Controllers\DataController.cs
 6. Run the webapp from Visual Studio, it should now be hosted at:
 ```
 localhost:7056

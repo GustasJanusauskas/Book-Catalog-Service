@@ -22,7 +22,7 @@ namespace BookCatalogService.Controllers {
             _logger = logger;
 
             //Connect to DB
-            //Credentials go here
+            //CREDENTIALS GO HERE
             string connString = "Host=localhost;Username=postgres;Password=root;Database=bookcatalogdb";
 
             conn = new NpgsqlConnection(connString);
