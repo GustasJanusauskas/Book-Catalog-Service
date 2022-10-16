@@ -1,6 +1,5 @@
 # Description
-A library book catalogue online service.
-Submission for the BA IT challenge 2022 for Gustas Janušauskas.
+A library catalogue website, built with ASP.NET, Angular and PostgreSQL.
 
 # Features
 A user can:
